@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  availability: false
+  secretary: one
+  equip_type: one
+
+two:
+  availability: false
+  secretary: two
+  equip_type: two

@@ -1,0 +1,32 @@
+<%= form_with(model: fine, local: true) do |form| %>
+  <% if fine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fine.errors.count, "error") %> prohibited this fine from being saved:</h2>
+
+      <ul>
+        <% fine.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reasonFine %>
+    <%= form.text_field :reasonFine %>
+  </div>
+
+  <div class="field">
+    <%= form.label :secretary_id %>
+    <%= form.text_field :secretary_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

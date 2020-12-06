@@ -1,0 +1,2 @@
+class EquipType < ApplicationRecord
+end

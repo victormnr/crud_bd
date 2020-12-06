@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @fine.value %>
+</p>
+
+<p>
+  <strong>Reasonfine:</strong>
+  <%= @fine.reasonFine %>
+</p>
+
+<p>
+  <strong>Secretary:</strong>
+  <%= @fine.secretary_id %>
+</p>
+
+<%= link_to 'Edit', edit_fine_path(@fine) %> |
+<%= link_to 'Back', fines_path %>
