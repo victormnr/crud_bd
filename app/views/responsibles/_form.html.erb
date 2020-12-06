@@ -1,0 +1,37 @@
+<%= form_with(model: responsible, local: true) do |form| %>
+  <% if responsible.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(responsible.errors.count, "error") %> prohibited this responsible from being saved:</h2>
+
+      <ul>
+        <% responsible.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cpfResp %>
+    <%= form.text_field :cpfResp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addressResp %>
+    <%= form.text_field :addressResp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nameResp %>
+    <%= form.text_field :nameResp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :income %>
+    <%= form.text_field :income %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

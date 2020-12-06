@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  addressSchool: MyString
+  nameSchool: MyString
+  director: MyString
+  secretary: one
+
+two:
+  addressSchool: MyString
+  nameSchool: MyString
+  director: MyString
+  secretary: two

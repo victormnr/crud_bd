@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpfresp:</strong>
+  <%= @responsible.cpfResp %>
+</p>
+
+<p>
+  <strong>Addressresp:</strong>
+  <%= @responsible.addressResp %>
+</p>
+
+<p>
+  <strong>Nameresp:</strong>
+  <%= @responsible.nameResp %>
+</p>
+
+<p>
+  <strong>Income:</strong>
+  <%= @responsible.income %>
+</p>
+
+<%= link_to 'Edit', edit_responsible_path(@responsible) %> |
+<%= link_to 'Back', responsibles_path %>
