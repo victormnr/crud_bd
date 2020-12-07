@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_033518) do
+ActiveRecord::Schema.define(version: 2020_12_07_041522) do
 
   create_table "classrooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "grade"
     t.string "letter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "classrooms_subjects", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "classroom_id", null: false
+    t.bigint "subject_id", null: false
+    t.index ["classroom_id", "subject_id"], name: "index_classrooms_subjects_on_classroom_id_and_subject_id"
+    t.index ["subject_id", "classroom_id"], name: "index_classrooms_subjects_on_subject_id_and_classroom_id"
   end
 
   create_table "equip_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -108,6 +115,8 @@ ActiveRecord::Schema.define(version: 2020_12_07_033518) do
     t.index ["professor_id"], name: "index_subjects_on_professor_id"
   end
 
+  add_foreign_key "classrooms_subjects", "classrooms"
+  add_foreign_key "classrooms_subjects", "subjects"
   add_foreign_key "equipment", "equip_types"
   add_foreign_key "equipment", "secretaries"
   add_foreign_key "fines", "responsibles"
