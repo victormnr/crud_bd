@@ -8,6 +8,7 @@
       <th>Value</th>
       <th>Reasonfine</th>
       <th>Secretary</th>
+      <th>Responsible</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= fine.value %></td>
         <td><%= fine.reasonFine %></td>
         <td><%= fine.secretary_id %></td>
+        <td><%= fine.responsible_id %></td>
         <td><%= link_to 'Show', fine %></td>
         <td><%= link_to 'Edit', edit_fine_path(fine) %></td>
         <td><%= link_to 'Destroy', fine, method: :delete, data: { confirm: 'Are you sure?' } %></td>

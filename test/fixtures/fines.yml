@@ -4,8 +4,10 @@ one:
   value: 1.5
   reasonFine: MyString
   secretary: one
+  responsible: one
 
 two:
   value: 1.5
   reasonFine: MyString
   secretary: two
+  responsible: two

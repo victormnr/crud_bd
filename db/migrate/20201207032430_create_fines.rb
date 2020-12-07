@@ -4,6 +4,7 @@ class CreateFines < ActiveRecord::Migration[6.0]
       t.float :value
       t.string :reasonFine
       t.references :secretary, null: false, foreign_key: true
+      t.references :responsible, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
+  resources :fines
   resources :equipment
   resources :equip_types
   resources :students
-  resources :fines
-  resources :requisitions
   resources :subjects
   resources :professors
   resources :schools

@@ -17,7 +17,7 @@ class FinesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create fine" do
     assert_difference('Fine.count') do
-      post fines_url, params: { fine: { reasonFine: @fine.reasonFine, secretary_id: @fine.secretary_id, value: @fine.value } }
+      post fines_url, params: { fine: { reasonFine: @fine.reasonFine, responsible_id: @fine.responsible_id, secretary_id: @fine.secretary_id, value: @fine.value } }
     end
 
     assert_redirected_to fine_url(Fine.last)
@@ -34,7 +34,7 @@ class FinesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update fine" do
-    patch fine_url(@fine), params: { fine: { reasonFine: @fine.reasonFine, secretary_id: @fine.secretary_id, value: @fine.value } }
+    patch fine_url(@fine), params: { fine: { reasonFine: @fine.reasonFine, responsible_id: @fine.responsible_id, secretary_id: @fine.secretary_id, value: @fine.value } }
     assert_redirected_to fine_url(@fine)
   end
 

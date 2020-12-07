@@ -15,6 +15,7 @@ class FinesTest < ApplicationSystemTestCase
     click_on "New Fine"
 
     fill_in "Reasonfine", with: @fine.reasonFine
+    fill_in "Responsible", with: @fine.responsible_id
     fill_in "Secretary", with: @fine.secretary_id
     fill_in "Value", with: @fine.value
     click_on "Create Fine"
@@ -28,6 +29,7 @@ class FinesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Reasonfine", with: @fine.reasonFine
+    fill_in "Responsible", with: @fine.responsible_id
     fill_in "Secretary", with: @fine.secretary_id
     fill_in "Value", with: @fine.value
     click_on "Update Fine"
