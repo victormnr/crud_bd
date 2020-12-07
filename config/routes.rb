@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :requisitions
   resources :fines
   resources :equipment
   resources :equip_types

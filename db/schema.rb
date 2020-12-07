@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_032430) do
+ActiveRecord::Schema.define(version: 2020_12_07_033518) do
 
   create_table "classrooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "grade"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 2020_12_07_032430) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["school_id"], name: "index_professors_on_school_id"
+  end
+
+  create_table "requisitions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "reasonReq"
+    t.bigint "responsible_id", null: false
+    t.bigint "equipment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["equipment_id"], name: "index_requisitions_on_equipment_id"
+    t.index ["responsible_id"], name: "index_requisitions_on_responsible_id"
   end
 
   create_table "responsibles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -103,6 +113,8 @@ ActiveRecord::Schema.define(version: 2020_12_07_032430) do
   add_foreign_key "fines", "responsibles"
   add_foreign_key "fines", "secretaries"
   add_foreign_key "professors", "schools"
+  add_foreign_key "requisitions", "equipment"
+  add_foreign_key "requisitions", "responsibles"
   add_foreign_key "schools", "secretaries"
   add_foreign_key "students", "classrooms"
   add_foreign_key "students", "responsibles"
