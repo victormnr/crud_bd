@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este repositório contém:
+* CRUD feito com ruby on rails para aplicações WEB
+* Script do banco de dados usado sys_edu_script.sql
+* Modelo relacional do banco de dados modelo_relacional_sys_edu.mwb
 
-Things you may want to cover:
+Para a execução da aplicação é necessário ruby 2.7.0 e rails 6.0 e os seguintes comandos devem ser executados:
 
-* Ruby version
+$ rails db:create db:migrate
 
-* System dependencies
+$ rails server
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Entre com o endereço do servidor local no navegador WEB e coloque /<nome_da_tabela> para acessar o CRUD desta tabela.
